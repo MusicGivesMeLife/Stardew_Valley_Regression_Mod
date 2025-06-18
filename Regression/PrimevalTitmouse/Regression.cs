@@ -357,20 +357,7 @@ namespace PrimevalTitmouse
                 //Default to all underwear being available
                 List<string> allUnderwear = Strings.ValidUnderwearTypes();
                 List<string> availableUnderwear = allUnderwear;
-                bool underwearAvailableAtShop = false;
-                if(Game1.currentLocation is SeedShop)
-                {
-                    //The seed shop does not sell the Joja diaper
-                    availableUnderwear.Remove("Joja diaper");
-                    underwearAvailableAtShop = true;
-                } else if(Game1.currentLocation is JojaMart)
-                {
-                    //Joja shop ONLY sels the Joja diaper and a cloth diaper
-                    availableUnderwear.Clear();
-                    availableUnderwear.Add("Joja diaper");
-                    availableUnderwear.Add("Cloth diaper");
-                    underwearAvailableAtShop = true;
-                }
+                bool underwearAvailableAtShop = true;
 
                 if(underwearAvailableAtShop)
                 {
@@ -378,7 +365,7 @@ namespace PrimevalTitmouse
                     {
                         Underwear underwear = new Underwear(type, 0.0f, 0.0f, 1);
                         currentShopMenu.forSale.Add(underwear);
-                        currentShopMenu.itemPriceAndStock.Add(underwear, new ItemStockInformation(underwear.container.price, 999));
+                        currentShopMenu.itemPriceAndStock.Add(underwear, new ItemStockInformation(1, 999));
                     }
                 }
             }
