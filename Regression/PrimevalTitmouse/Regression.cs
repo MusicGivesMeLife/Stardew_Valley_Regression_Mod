@@ -378,7 +378,7 @@ namespace PrimevalTitmouse
                     {
                         Underwear underwear = new Underwear(type, 0.0f, 0.0f, 1);
                         currentShopMenu.forSale.Add(underwear);
-                        currentShopMenu.itemPriceAndStock.Add(underwear, new ItemStockInformation(underwear.container.price, 999));
+                        currentShopMenu.itemPriceAndStock.Add(underwear, new ItemStockInformation(1, 999));
                     }
                 }
             }
